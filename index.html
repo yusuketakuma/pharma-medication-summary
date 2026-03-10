@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>薬歴サマリー生成ツール | 薬剤師向け無料ツール</title>
   <meta name="description" content="患者の薬歴情報から引継ぎ・報告用サマリーを自動生成。在宅医療・訪問薬剤管理の業務効率化に。">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "薬歴サマリー生成ツール",
+    "description": "患者の薬歴情報から引継ぎ・報告用サマリーを自動生成。在宅医療・訪問薬剤管理の業務効率化に。",
+    "url": "https://yusuketakuma.github.io/pharma-medication-summary/",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "薬剤師"
+    },
+    "inLanguage": "ja"
+  }
+  </script>
   
   <!-- OGP -->
   <meta property="og:title" content="薬歴サマリー生成ツール | 薬剤師向け無料ツール">
@@ -305,6 +326,47 @@
       display: none;
     }
   </style>
+  <!-- Google tag (gtag.js) - 測定IDを差し替えてください -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+
+    function trackPromptCTA() {
+      gtag('event', 'cta_click', {
+        'event_category': 'monetization',
+        'event_label': 'ai_prompts',
+        'product_name': 'AIプロンプト集',
+        'price': 300
+      });
+    }
+
+    function trackNotionCTA() {
+      gtag('event', 'cta_click', {
+        'event_category': 'monetization',
+        'event_label': 'notion_template',
+        'product_name': 'Notionテンプレート',
+        'price': 500
+      });
+    }
+
+    function trackToolUsage(actionType) {
+      gtag('event', 'tool_usage', {
+        'event_category': 'engagement',
+        'event_label': '薬歴サマリー生成',
+        'action_type': actionType
+      });
+    }
+
+    function trackCopyAction() {
+      gtag('event', 'copy_action', {
+        'event_category': 'engagement',
+        'event_label': 'medication_summary'
+      });
+    }
+  </script>
 </head>
 <body>
   <div class="container">
@@ -637,8 +699,29 @@ ${specialNote ? `特記: ${specialNote}` : ''}`;
       if (e.key === 'Enter') addMedication('external');
     });
   </script>
+  <!-- 収益化CTA -->
+  <section style="margin-top: 32px; padding: 24px; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 16px; border: 1px solid #bfdbfe;">
+    <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; color: #1e40af;">🎁 さらに業務を効率化しませんか？</h3>
+    <div style="margin-bottom: 16px;">
+      <p style="margin-bottom: 8px; font-size: 0.9rem;"><strong>📖 薬剤師向けAIプロンプト集</strong></p>
+      <p style="font-size: 0.85rem; color: #555; margin-bottom: 8px;">ChatGPT/Claudeで時短する100+のプロンプトテンプレート</p>
+      <p style="font-size: 1rem; font-weight: 600; color: #1e40af;">¥300</p>
+    </div>
+    <div style="margin-bottom: 16px;">
+      <p style="margin-bottom: 8px; font-size: 0.9rem;"><strong>📋 薬局業務Notionテンプレート</strong></p>
+      <p style="font-size: 0.85rem; color: #555; margin-bottom: 8px;">訪問記録・在庫管理・患者管理を一元化</p>
+      <p style="font-size: 1rem; font-weight: 600; color: #1e40af;">¥500</p>
+    </div>
+    <p style="font-size: 0.8rem; color: #666;">※ 準備中（近日公開）</p>
+  </section>
+
   <div class="section">
-    <div class="section-title">🔗 他の無料ツール</div>
+                <!-- ポータルサイト -->
+            <div style="text-align: center; margin: 24px 0;">
+                <a href="https://yusuketakuma.github.io/pharma-free-tools/" target="_blank" style="display: inline-block; padding: 12px 24px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">🏠 全ツール一覧（ポータルサイト）</a>
+            </div>
+
+<div class="section-title">🔗 他の無料ツール</div>
     <div class="links">
       <a href="https://yusuketakuma.github.io/pharma-drug-price-tool/">薬価計算</a>
       <a href="https://yusuketakuma.github.io/pharma-medication-history-tool/">薬歴テンプレート</a>
@@ -657,6 +740,7 @@ ${specialNote ? `特記: ${specialNote}` : ''}`;
       <a href="https://yusuketakuma.github.io/pharma-adherence-check/">アドヒアランス</a>
       <a href="https://yusuketakuma.github.io/pharma-similar-drug-check/">類似薬名</a>
       <a href="https://yusuketakuma.github.io/pharma-polypharmacy/">ポリファーマシー</a>
+                    <a href="https://yusuketakuma.github.io/pharma-medication-reminder/" target="_blank">服薬リマインダー生成</a>
       <a href="https://yusuketakuma.github.io/pharma-medication-guidance-scenario/">服薬指導シナリオ</a>
       <a href="https://yusuketakuma.github.io/pharma-fee-calculator/">調剤報酬計算</a>
       <a href="https://yusuketakuma.github.io/pharma-homecare-report/">在宅医療報告書</a>
